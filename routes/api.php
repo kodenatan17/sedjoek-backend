@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('products', [ProductController::class], 'all'); //Routing untuk products
-Route::get('categories', [ProductCategoryController::class], 'all'); //Routing untuk categoryproducts
+Route::get('/products', [App\Http\Controllers\API\ProductController::class], 'all'); //Routing untuk products
+Route::get('/categories', [App\Http\Controllers\API\ProductCategoryController::class], 'all'); //Routing untuk categoryproducts
+//User Controller API
+Route::get('register', [UserController::class, 'register']);
