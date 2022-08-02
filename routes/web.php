@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\BrandProductController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductCategoryController;
@@ -20,7 +21,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
 
         Route::middleware(['admin'])->group(function(){
-            Route::resource('/category', ProductCategoryController::class);
+            Route::resource('category', ProductCategoryController::class);
+            Route::resource('brand', BrandProductController::class);
         });
     });
 });
