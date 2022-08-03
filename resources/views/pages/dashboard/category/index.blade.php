@@ -10,7 +10,7 @@
             //AJAX DATATABLE
             var dataTable = $('#crudTable').DataTable({
                 ajax: {
-                    url: "{!! url()->current !!}"
+                    url: "{!! url()->current() !!}"
                 },
                 column: [{
                         data: 'id',
@@ -41,7 +41,7 @@
             </div>
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class = "px-4 py-5 bg-white sm:p-6">
-                    <table id ="crudTable" class ="w-full table-auto">
+                    <table id ="crudTable">
                         <thead>
                             <tr>
                                 <th>ID</th>

@@ -31,6 +31,9 @@ class ProductCategoryController extends Controller
                 </form>
                 ';
                 })
+                ->editColumn('price', function($item){
+                    return number_format($item->price);
+                })
                 ->rowColumn(['action'])
                 ->make();
         }

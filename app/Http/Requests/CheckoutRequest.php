@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class ProductGalleryRequest extends FormRequest
+class CheckoutRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,10 @@ class ProductGalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'files.*' => 'required|image',
+            'name' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'phone' => 'required',
         ];
     }
 }

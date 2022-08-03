@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class TransactionRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -24,7 +25,7 @@ class TransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'status' => 'in:PENDING,SUCCESS,CANCELED,FAILED,SHIPPING,SHIPPED'
         ];
     }
 }
