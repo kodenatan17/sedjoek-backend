@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://backend.sedjoek.id'),
 
     'asset_url' => env('ASSET_URL'),
 

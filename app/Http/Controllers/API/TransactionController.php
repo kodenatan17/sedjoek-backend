@@ -20,7 +20,7 @@ class TransactionController extends Controller
             $transaction = Transaction::with(['details.product'])->find($id);
             if ($transaction) {
                 return ResponseFormatter::success(
-                    '$transaction',
+                    $transaction,
                     'Data transaksi berhasil dikirim'
                 );
             } else {
