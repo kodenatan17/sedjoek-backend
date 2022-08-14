@@ -24,8 +24,8 @@
                     {
                         data: 'action',
                         name: 'action',
-                        orderable: 'false',
-                        searchable: 'false',
+                        orderable: false,
+                        searchable: false,
                         width: '25%',
                     }
                 ],
